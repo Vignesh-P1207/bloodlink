@@ -24,7 +24,6 @@ export default function Header() {
             width={56}
             height={56}
             className="w-14 h-14 drop-shadow-lg"
-            data-ai-hint="logo blood"
           />
           <h1 className="text-4xl font-extrabold font-headline tracking-wide drop-shadow-md">
             BloodLink

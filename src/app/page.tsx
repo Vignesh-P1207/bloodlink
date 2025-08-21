@@ -11,7 +11,6 @@ export default function Home() {
         width={150}
         height={150}
         className="mx-auto mb-4"
-        data-ai-hint="logo blood"
       />
       <h1 className="text-6xl font-extrabold font-headline text-red-200 mb-6 drop-shadow-xl">
         Welcome to BloodLink
