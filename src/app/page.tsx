@@ -1,14 +1,23 @@
 import Link from 'next/link';
 import { Users, Hospital, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="text-center">
+      <Image
+        src="/logo.png"
+        alt="BloodLink Logo"
+        width={150}
+        height={150}
+        className="mx-auto mb-4"
+        data-ai-hint="logo blood"
+      />
       <h1 className="text-6xl font-extrabold font-headline text-red-200 mb-6 drop-shadow-xl">
         Welcome to BloodLink
       </h1>
-      <p className="text-2xl text-red-300 mb-12 max-w-3xl mx-auto">
-        Connecting donors with hospitals to save lives. Choose your portal to get started.
+      <p className="text-3xl text-red-300 mb-12 max-w-3xl mx-auto font-semibold tracking-wider">
+        TOGETHER WE SHARE LIFE
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
         <Link href="/donor">

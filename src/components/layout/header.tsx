@@ -19,8 +19,8 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between select-none">
         <Link href="/" className="flex items-center space-x-4">
           <Image
-            src="https://storage.googleapis.com/a1aa/image/eb2bdec4-9c38-4d99-8c64-c2fae5664a95.jpg"
-            alt="Red blood drop icon symbolizing blood donation"
+            src="/logo.png"
+            alt="BloodLink Logo"
             width={56}
             height={56}
             className="w-14 h-14 drop-shadow-lg"
