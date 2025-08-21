@@ -1,21 +1,41 @@
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
-import DonorPortal from '@/components/donor-portal';
-import HospitalPortal from '@/components/hospital-portal';
-import AdminDashboard from '@/components/admin-dashboard';
-import BloodDropBackground from '@/components/blood-drop-background';
+import Link from 'next/link';
+import { Users, Hospital, ShieldCheck } from 'lucide-react';
 
 export default function Home() {
   return (
-    <>
-      <BloodDropBackground />
-      <Header />
-      <main className="flex-grow container mx-auto px-6 py-12 pt-32 space-y-24 relative z-10">
-        <DonorPortal />
-        <HospitalPortal />
-        <AdminDashboard />
-      </main>
-      <Footer />
-    </>
+    <div className="text-center">
+      <h1 className="text-6xl font-extrabold font-headline text-red-200 mb-6 drop-shadow-xl">
+        Welcome to BloodLink
+      </h1>
+      <p className="text-2xl text-red-300 mb-12 max-w-3xl mx-auto">
+        Connecting donors with hospitals to save lives. Choose your portal to get started.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+        <Link href="/donor">
+          <div className="glass-container p-8 text-center h-full flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-105">
+            <Users className="w-24 h-24 text-red-300 mb-6 drop-shadow-lg" />
+            <h2 className="text-4xl font-bold font-headline text-red-300">
+              Donor Portal
+            </h2>
+          </div>
+        </Link>
+        <Link href="/hospital">
+          <div className="glass-container p-8 text-center h-full flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-105">
+            <Hospital className="w-24 h-24 text-red-300 mb-6 drop-shadow-lg" />
+            <h2 className="text-4xl font-bold font-headline text-red-300">
+              Hospital Portal
+            </h2>
+          </div>
+        </Link>
+        <Link href="/admin">
+          <div className="glass-container p-8 text-center h-full flex flex-col items-center justify-center cursor-pointer transition-transform transform hover:scale-105">
+            <ShieldCheck className="w-24 h-24 text-red-300 mb-6 drop-shadow-lg" />
+            <h2 className="text-4xl font-bold font-headline text-red-300">
+              Admin Dashboard
+            </h2>
+          </div>
+        </Link>
+      </div>
+    </div>
   );
 }
