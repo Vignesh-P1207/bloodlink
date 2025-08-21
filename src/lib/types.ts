@@ -13,3 +13,12 @@ export type RecentAlert = {
   status: 'Accepted' | 'No Response' | 'Pending';
   timestamp: string;
 };
+
+export type Donor = {
+  donorName: string;
+  donorEmail: string;
+  donorPhone: string;
+  donorBloodGroup: string;
+  donorLocation: string;
+  registrationDate: string;
+};

@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
+import { useRouter } from "next/navigation";
+import type { Donor } from "@/lib/types";
 
 const donorSchema = z.object({
   donorName: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -29,6 +31,7 @@ const donorSchema = z.object({
 
 export default function DonorPortal() {
   const { toast } = useToast();
+  const router = useRouter();
   const form = useForm<z.infer<typeof donorSchema>>({
     resolver: zodResolver(donorSchema),
     defaultValues: {
@@ -41,12 +44,31 @@ export default function DonorPortal() {
   });
 
   function onSubmit(values: z.infer<typeof donorSchema>) {
-    console.log(values);
+    const newDonor: Donor = {
+      donorName: values.donorName,
+      donorEmail: values.donorEmail,
+      donorPhone: values.donorPhone,
+      donorBloodGroup: values.donorBloodGroup,
+      donorLocation: values.donorLocation,
+      registrationDate: new Date().toISOString(),
+    };
+    
+    try {
+      const existingDonors: Donor[] = JSON.parse(localStorage.getItem("donors") || "[]");
+      existingDonors.push(newDonor);
+      localStorage.setItem("donors", JSON.stringify(existingDonors));
+    } catch (error) {
+      console.error("Could not save donor to localStorage", error);
+    }
+    
     toast({
       title: "Registration Successful!",
-      description: "Thank you for registering as a donor. You will receive alerts based on your blood group and location.",
+      description: "Thank you for registering. Redirecting to the admin dashboard...",
     });
-    form.reset();
+
+    setTimeout(() => {
+      router.push("/admin");
+    }, 2000);
   }
 
   return (
