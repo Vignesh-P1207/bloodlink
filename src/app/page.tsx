@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <BloodDropBackground />
       <Header />
-      <main className="flex-grow container mx-auto px-6 py-12 space-y-24 relative z-10">
+      <main className="flex-grow container mx-auto px-6 py-12 pt-32 space-y-24 relative z-10">
         <DonorPortal />
         <HospitalPortal />
         <AdminDashboard />
