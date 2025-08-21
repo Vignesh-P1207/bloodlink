@@ -23,7 +23,7 @@ export default function Header() {
             alt="Red blood drop icon symbolizing blood donation"
             width={56}
             height={56}
-            className="w-14 h-14 drop-shadow-lg"
+            className="w-14 h-14 drop-shadow-lg mix-blend-screen"
             data-ai-hint="logo blood"
           />
           <h1 className="text-4xl font-extrabold font-headline tracking-wide drop-shadow-md">
