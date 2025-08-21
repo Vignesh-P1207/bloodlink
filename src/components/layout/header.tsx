@@ -19,11 +19,12 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between select-none">
         <Link href="/" className="flex items-center space-x-4">
           <Image
-            src="/logo.png"
+            src="https://placehold.co/56x56.png"
             alt="BloodLink Logo"
             width={56}
             height={56}
             className="w-14 h-14 drop-shadow-lg"
+            data-ai-hint="blood drop cross"
           />
           <h1 className="text-4xl font-extrabold font-headline tracking-wide drop-shadow-md">
             BloodLink

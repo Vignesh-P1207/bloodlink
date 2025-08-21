@@ -6,11 +6,12 @@ export default function Home() {
   return (
     <div className="text-center">
       <Image
-        src="/logo.png"
+        src="https://placehold.co/150x150.png"
         alt="BloodLink Logo"
         width={150}
         height={150}
         className="mx-auto mb-4"
+        data-ai-hint="blood drop cross"
       />
       <h1 className="text-6xl font-extrabold font-headline text-red-200 mb-6 drop-shadow-xl">
         Welcome to BloodLink
